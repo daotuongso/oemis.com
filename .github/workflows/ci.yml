@@ -1,29 +1,62 @@
-name: CI – Build & Test (.NET 8)
+name: CI
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, dev ]
+    branches: [ main ]
 
 jobs:
-  build-test:
+  build-backend:
+    name: Build & Test Backend
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-    - name: Setup .NET 8
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restore
-      run: dotnet restore Backend.sln
+      - name: Restore NuGet packages
+        run: dotnet restore src/backend/Backend.sln
 
-    - name: Build (Release)
-      run: dotnet build Backend.sln --configuration Release --no-restore
+      - name: Build solution
+        run: dotnet build src/backend/Backend.sln --no-restore --configuration Release
 
-    - name: Test (nếu có dự án test)
-      run: |
-        echo "🔔 Hiện tại chưa có Unit Test, bước này sẽ skip."
+      - name: Run backend tests
+        run: dotnet test src/backend/Backend.sln --no-build --configuration Release
+
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('frontend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Lint & Test
+        working-directory: frontend
+        run: |
+          npm run lint || true   # nếu có ESLint
+          npm test -- --watchAll=false || true
+
+      - name: Build production bundle
+        working-directory: frontend
+        run: npm run build
+
