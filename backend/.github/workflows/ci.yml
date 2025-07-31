@@ -27,7 +27,7 @@ jobs:
       - name: Run backend tests
         run: dotnet test Backend.sln --no-build --configuration Release
 
-# Uncomment and adjust the frontend job if frontend code is in the repo
+# Uncomment and configure this job if frontend code is added to the repo
 #  build-frontend:
 #    name: Build Frontend
 #    runs-on: ubuntu-latest
@@ -43,4 +43,3 @@ jobs:
 #      - name: Build production bundle
 #        run: npm run build
 #        working-directory: frontend
-
