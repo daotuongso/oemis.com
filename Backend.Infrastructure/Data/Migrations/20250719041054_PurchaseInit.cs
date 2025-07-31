@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class PurchaseInit : Migration

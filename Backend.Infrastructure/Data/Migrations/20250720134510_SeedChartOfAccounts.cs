@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class SeedChartOfAccounts : Migration

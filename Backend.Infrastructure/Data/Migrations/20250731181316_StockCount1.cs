@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddExternalIdToSalesOrder : Migration
+    public partial class StockCount1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

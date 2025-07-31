@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(OrchidContext))]
     partial class OrchidContextModelSnapshot : ModelSnapshot
@@ -17,12 +17,12 @@ namespace Backend.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.6")
+                .HasAnnotation("ProductVersion", "8.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Backend.Models.Accounting.Account", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -196,7 +196,7 @@ namespace Backend.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.Journal", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.Journal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +223,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Journals");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.JournalLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.JournalLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -252,7 +252,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("JournalLines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.LedgerEntry", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.LedgerEntry", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -286,7 +286,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("LedgerEntries");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.SalesLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.SalesLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -313,7 +313,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("SalesLines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.SalesOrder", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.SalesOrder", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -342,7 +342,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("SalesOrders");
                 });
 
-            modelBuilder.Entity("Backend.Models.Category", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -367,7 +367,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Backend.Models.Customer", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -413,7 +413,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Backend.Models.CustomerGroup", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.CustomerGroup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -433,7 +433,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("CustomerGroups");
                 });
 
-            modelBuilder.Entity("Backend.Models.CustomerLog", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.CustomerLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -464,7 +464,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("CustomerLogs");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.ProductStock", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.ProductStock", b =>
                 {
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -485,7 +485,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("ProductStocks");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.StockTxn", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.StockTxn", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -523,7 +523,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("StockTxns");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.Warehouse", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.Warehouse", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -545,7 +545,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Warehouses");
                 });
 
-            modelBuilder.Entity("Backend.Models.Order", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -613,7 +613,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Backend.Models.OrderItem", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -643,7 +643,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.GoodsReceipt", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.GoodsReceipt", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -669,7 +669,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("GoodsReceipts");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.GoodsReceiptLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.GoodsReceiptLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -695,7 +695,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("GoodsReceiptLines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseOrder", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseOrder", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -737,7 +737,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("PurchaseOrders");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseOrderLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseOrderLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -766,7 +766,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("PurchaseOrderLines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseRequest", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseRequest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -794,7 +794,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("PurchaseRequests");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseRequestLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseRequestLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -823,7 +823,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("PurchaseRequestLines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.Supplier", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.Supplier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -856,7 +856,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Suppliers");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.SupplierPayment", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.SupplierPayment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -884,7 +884,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("SupplierPayments");
                 });
 
-            modelBuilder.Entity("Backend.Models.Product", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -932,59 +932,7 @@ namespace Backend.Data.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("Backend.Infrastructure.Entities.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -1047,6 +995,58 @@ namespace Backend.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -1180,24 +1180,24 @@ namespace Backend.Data.Migrations
                     b.ToTable("StockCountSheets");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.Account", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.Account", b =>
                 {
-                    b.HasOne("Backend.Models.Accounting.Account", "Parent")
+                    b.HasOne("Backend.Domain.Entities.Accounting.Account", "Parent")
                         .WithMany("Children")
                         .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.JournalLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.JournalLine", b =>
                 {
-                    b.HasOne("Backend.Models.Accounting.Account", "Account")
+                    b.HasOne("Backend.Domain.Entities.Accounting.Account", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Accounting.Journal", "Journal")
+                    b.HasOne("Backend.Domain.Entities.Accounting.Journal", "Journal")
                         .WithMany("Lines")
                         .HasForeignKey("JournalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1208,9 +1208,9 @@ namespace Backend.Data.Migrations
                     b.Navigation("Journal");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.LedgerEntry", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.LedgerEntry", b =>
                 {
-                    b.HasOne("Backend.Models.Accounting.Account", "Account")
+                    b.HasOne("Backend.Domain.Entities.Accounting.Account", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1219,27 +1219,27 @@ namespace Backend.Data.Migrations
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.SalesLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.SalesLine", b =>
                 {
-                    b.HasOne("Backend.Models.Accounting.SalesOrder", null)
+                    b.HasOne("Backend.Domain.Entities.Accounting.SalesOrder", null)
                         .WithMany("Lines")
                         .HasForeignKey("SalesOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Backend.Models.Customer", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Customer", b =>
                 {
-                    b.HasOne("Backend.Models.CustomerGroup", "Group")
+                    b.HasOne("Backend.Domain.Entities.CustomerGroup", "Group")
                         .WithMany("Customers")
                         .HasForeignKey("GroupId");
 
                     b.Navigation("Group");
                 });
 
-            modelBuilder.Entity("Backend.Models.CustomerLog", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.CustomerLog", b =>
                 {
-                    b.HasOne("Backend.Models.Customer", "Customer")
+                    b.HasOne("Backend.Domain.Entities.Customer", "Customer")
                         .WithMany("Logs")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1248,15 +1248,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.ProductStock", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.ProductStock", b =>
                 {
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany("Stocks")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Inventory.Warehouse", "Warehouse")
+                    b.HasOne("Backend.Domain.Entities.Inventory.Warehouse", "Warehouse")
                         .WithMany("Stocks")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1267,15 +1267,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("Warehouse");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.StockTxn", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.StockTxn", b =>
                 {
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Inventory.Warehouse", "Warehouse")
+                    b.HasOne("Backend.Domain.Entities.Inventory.Warehouse", "Warehouse")
                         .WithMany()
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1286,15 +1286,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("Warehouse");
                 });
 
-            modelBuilder.Entity("Backend.Models.OrderItem", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Backend.Models.Order", "Order")
+                    b.HasOne("Backend.Domain.Entities.Order", "Order")
                         .WithMany("Items")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1305,9 +1305,9 @@ namespace Backend.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.GoodsReceipt", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.GoodsReceipt", b =>
                 {
-                    b.HasOne("Backend.Models.Procurement.PurchaseOrder", "PurchaseOrder")
+                    b.HasOne("Backend.Domain.Entities.Procurement.PurchaseOrder", "PurchaseOrder")
                         .WithMany("GoodsReceipts")
                         .HasForeignKey("PurchaseOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1316,15 +1316,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("PurchaseOrder");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.GoodsReceiptLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.GoodsReceiptLine", b =>
                 {
-                    b.HasOne("Backend.Models.Procurement.GoodsReceipt", "GoodsReceipt")
+                    b.HasOne("Backend.Domain.Entities.Procurement.GoodsReceipt", "GoodsReceipt")
                         .WithMany("Lines")
                         .HasForeignKey("GoodsReceiptId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1335,17 +1335,17 @@ namespace Backend.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseOrder", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseOrder", b =>
                 {
-                    b.HasOne("Backend.Models.Accounting.Journal", "Journal")
+                    b.HasOne("Backend.Domain.Entities.Accounting.Journal", "Journal")
                         .WithMany()
                         .HasForeignKey("JournalId");
 
-                    b.HasOne("Backend.Models.Procurement.PurchaseRequest", "PurchaseRequest")
+                    b.HasOne("Backend.Domain.Entities.Procurement.PurchaseRequest", "PurchaseRequest")
                         .WithMany()
                         .HasForeignKey("PurchaseRequestId");
 
-                    b.HasOne("Backend.Models.Procurement.Supplier", "Supplier")
+                    b.HasOne("Backend.Domain.Entities.Procurement.Supplier", "Supplier")
                         .WithMany("Orders")
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1358,15 +1358,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseOrderLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseOrderLine", b =>
                 {
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Procurement.PurchaseOrder", "PurchaseOrder")
+                    b.HasOne("Backend.Domain.Entities.Procurement.PurchaseOrder", "PurchaseOrder")
                         .WithMany("Lines")
                         .HasForeignKey("PurchaseOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1377,15 +1377,15 @@ namespace Backend.Data.Migrations
                     b.Navigation("PurchaseOrder");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseRequestLine", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseRequestLine", b =>
                 {
-                    b.HasOne("Backend.Models.Product", "Product")
+                    b.HasOne("Backend.Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Procurement.PurchaseRequest", "PurchaseRequest")
+                    b.HasOne("Backend.Domain.Entities.Procurement.PurchaseRequest", "PurchaseRequest")
                         .WithMany("Lines")
                         .HasForeignKey("PurchaseRequestId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1396,9 +1396,9 @@ namespace Backend.Data.Migrations
                     b.Navigation("PurchaseRequest");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.SupplierPayment", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.SupplierPayment", b =>
                 {
-                    b.HasOne("Backend.Models.Procurement.Supplier", "Supplier")
+                    b.HasOne("Backend.Domain.Entities.Procurement.Supplier", "Supplier")
                         .WithMany("Payments")
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1407,9 +1407,9 @@ namespace Backend.Data.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Backend.Models.Product", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Backend.Models.Category", "Category")
+                    b.HasOne("Backend.Domain.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1429,7 +1429,7 @@ namespace Backend.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Backend.Infrastructure.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1438,7 +1438,7 @@ namespace Backend.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Backend.Infrastructure.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1453,7 +1453,7 @@ namespace Backend.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Backend.Infrastructure.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1462,7 +1462,7 @@ namespace Backend.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Backend.Infrastructure.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1478,71 +1478,71 @@ namespace Backend.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.Account", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.Account", b =>
                 {
                     b.Navigation("Children");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.Journal", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.Journal", b =>
                 {
                     b.Navigation("Lines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Accounting.SalesOrder", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Accounting.SalesOrder", b =>
                 {
                     b.Navigation("Lines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Category", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Backend.Models.Customer", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Customer", b =>
                 {
                     b.Navigation("Logs");
                 });
 
-            modelBuilder.Entity("Backend.Models.CustomerGroup", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.CustomerGroup", b =>
                 {
                     b.Navigation("Customers");
                 });
 
-            modelBuilder.Entity("Backend.Models.Inventory.Warehouse", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Inventory.Warehouse", b =>
                 {
                     b.Navigation("Stocks");
                 });
 
-            modelBuilder.Entity("Backend.Models.Order", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Order", b =>
                 {
                     b.Navigation("Items");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.GoodsReceipt", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.GoodsReceipt", b =>
                 {
                     b.Navigation("Lines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseOrder", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseOrder", b =>
                 {
                     b.Navigation("GoodsReceipts");
 
                     b.Navigation("Lines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.PurchaseRequest", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.PurchaseRequest", b =>
                 {
                     b.Navigation("Lines");
                 });
 
-            modelBuilder.Entity("Backend.Models.Procurement.Supplier", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Procurement.Supplier", b =>
                 {
                     b.Navigation("Orders");
 
                     b.Navigation("Payments");
                 });
 
-            modelBuilder.Entity("Backend.Models.Product", b =>
+            modelBuilder.Entity("Backend.Domain.Entities.Product", b =>
                 {
                     b.Navigation("Stocks");
                 });

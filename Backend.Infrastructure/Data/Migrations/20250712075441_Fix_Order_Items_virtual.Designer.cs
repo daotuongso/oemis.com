@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(OrchidContext))]
     [Migration("20250712075441_Fix_Order_Items_virtual")]

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Backend.Data.Migrations
+namespace Backend.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Fix_Order_Items_virtual : Migration
