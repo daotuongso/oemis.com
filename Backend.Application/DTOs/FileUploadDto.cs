@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http;
+
 namespace Backend.Application.DTOs
 {
     public class FileUploadDto

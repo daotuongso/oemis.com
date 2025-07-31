@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Backend.Infrastructure.Data;
 using Backend.Application.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Backend.Domain.Entities.Inventory;
 
 namespace Backend.Application.Services
 {

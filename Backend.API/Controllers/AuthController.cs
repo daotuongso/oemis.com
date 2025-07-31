@@ -8,15 +8,16 @@ using System.Text;
 using System.Net.Mail;
 using Backend.Application.DTOs;
 using Backend.Domain.Entities;
+using Backend.Infrastructure.Entities;
 
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly UserManager<IdentityUser> _userMgr;
+    private readonly UserManager<ApplicationUser> _userMgr;
     private readonly IConfiguration _cfg;
 
-    public AuthController(UserManager<IdentityUser> users, IConfiguration cfg)
+    public AuthController(UserManager<ApplicationUser> users, IConfiguration cfg)
         => (_userMgr, _cfg) = (users, cfg);
 
     /* ───────────── LOGIN ───────────── */
@@ -55,7 +56,7 @@ public class AuthController : ControllerBase
         if (await _userMgr.FindByEmailAsync(dto.Email) != null)
             return Conflict(new { detail = "Email đã tồn tại." });
 
-        var user = new IdentityUser
+        var user = new ApplicationUser
         {
             UserName = dto.Email,
             Email = dto.Email,

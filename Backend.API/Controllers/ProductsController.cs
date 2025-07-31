@@ -1,11 +1,11 @@
 using Backend.Infrastructure.Data;
 using Backend.Domain.Entities;
-using Backend.Infrastructure.Utils;
+using Backend.API.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

@@ -3,7 +3,7 @@ using Backend.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

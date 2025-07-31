@@ -1,9 +1,8 @@
 using Backend.Application.DTOs;
-using Backend.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.Controllers
+namespace Backend.API.Controllers
 {
     /// <summary>
     /// API mở and chốt phiếu kiểm kê kho

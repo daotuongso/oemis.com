@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 using Backend.Infrastructure.Data;
 using Backend.Domain.Entities;
 using Backend.Application.DTOs;
-using Backend.Infrastructure.Utils; // <-- Đảm bảo đã có dòng này!
+using Backend.API.Utils; // <-- Đảm bảo đã có dòng này!
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Controllers
+namespace Backend.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Backend.Domain.Enums;
 
 namespace Backend.Domain.Entities
 {
-    public enum OrderStatus { Pending, Confirmed, Packing, Shipped, Delivered, Cancelled }
-    public enum PayStatus { Unpaid, Paid, Refunded }
 
     public class Order
     {

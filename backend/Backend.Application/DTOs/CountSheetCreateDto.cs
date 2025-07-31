@@ -1,1 +1,0 @@
-public record CountSheetCreateDto(List<CountLineDto> Lines);

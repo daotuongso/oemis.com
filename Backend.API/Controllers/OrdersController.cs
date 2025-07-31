@@ -3,12 +3,13 @@ using System.Security.Claims;
 using Backend.Infrastructure.Data;
 using Backend.Domain.Entities;
 using Backend.Application.DTOs;
-using Backend.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Backend.Application.Services.Interfaces;
+using Backend.Domain.Enums;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

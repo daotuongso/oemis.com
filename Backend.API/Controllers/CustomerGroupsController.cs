@@ -1,10 +1,10 @@
 using Backend.Infrastructure.Data;
-using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Application.DTOs;
+using Backend.Domain.Entities;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [ApiController]
 [Route("api/customers/groups")]

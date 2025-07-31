@@ -1,12 +1,12 @@
 using Backend.Application.DTOs.Procurement;
+using Backend.Application.Services.Interfaces;
 using Backend.Domain.Entities.Procurement;
-using Backend.Domain.Interfaces;
 using Backend.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Controllers
+namespace Backend.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

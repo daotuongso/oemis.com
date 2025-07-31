@@ -2,13 +2,15 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Backend.Infrastructure.Data;
 using Backend.Application.Services;
-using Backend.Domain.Interfaces;
-using Backend.Infrastructure.Utils;
+using Backend.Application.Services.Interfaces;
+using Backend.API.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Backend.API.Middleware;
+using Backend.Infrastructure.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +19,7 @@ builder.Services.AddDbContext<OrchidContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
         sql => sql.EnableRetryOnFailure()));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<OrchidContext>()
     .AddDefaultTokenProviders();
 

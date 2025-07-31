@@ -1,24 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <!-- Dùng version trung tâm – không set Version ở đây -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" />
-    <PackageReference Include="Microsoft.Extensions.Options" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
-  </ItemGroup>
-
-  <!-- Tạm thời cho phép Service truy cập DbContext trong Infrastructure -->
-  <ItemGroup>
+    <!-- Application reference Domain + Infrastructure -->
     <ProjectReference Include="..\Backend.Domain\Backend.Domain.csproj" />
     <ProjectReference Include="..\Backend.Infrastructure\Backend.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- AutoMapper DI -->
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+  </ItemGroup>
+  <!-- ========= MỚI: cho phép dùng PdfUtil từ API ========= -->
+  <ItemGroup>
+    <Compile Include="..\Backend.API\Utils\PdfUtil.cs" Link="Utils\PdfUtil.cs" />
+  </ItemGroup>
+
+  <!-- ========= MỚI: packages cho PdfUtil ========= -->
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" />
+    <PackageReference Include="DocumentFormat.OpenXml" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+  </ItemGroup>
 </Project>
+
+
+
+
 

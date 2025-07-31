@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Domain.Entities.Inventory;
 using Backend.Domain.Entities.Procurement;
 using Backend.Domain.Entities.Accounting;
+using Backend.Infrastructure.Entities;
 
 namespace Backend.Infrastructure.Data;
 

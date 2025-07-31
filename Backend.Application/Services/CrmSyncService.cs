@@ -9,7 +9,7 @@ using Backend.Application.DTOs.Accounting;
 using Backend.Application.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Backend.Application.Services;
+namespace Backend.Application.Services;
 
 /// <summary>Đồng bộ dữ liệu CRM → ERP (cùng solution).</summary>
 public class CrmSyncService : ICrmSyncService

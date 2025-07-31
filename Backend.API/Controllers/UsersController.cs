@@ -1,18 +1,19 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Backend.Infrastructure.Entities;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [Authorize(Roles = "Admin")]
 [ApiController]
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
 {
-    private readonly UserManager<IdentityUser> _userMgr;
+    private readonly UserManager<ApplicationUser> _userMgr;
     private readonly RoleManager<IdentityRole> _roleMgr;
 
-    public UsersController(UserManager<IdentityUser> u, RoleManager<IdentityRole> r)
+    public UsersController(UserManager<ApplicationUser> u, RoleManager<IdentityRole> r)
         => (_userMgr, _roleMgr) = (u, r);
 
     /* -------- GET LIST -------- */

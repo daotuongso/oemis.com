@@ -7,7 +7,6 @@ using Backend.Domain.Entities.Accounting;
 using Backend.Application.DTOs.Accounting;
 using Backend.Application.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Backend.Application.DTOs.Accounting;
 
 namespace Backend.Application.Services
 {

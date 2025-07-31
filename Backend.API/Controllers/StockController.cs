@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Backend.Application.DTOs;
-using Backend.Domain.Interfaces;
+using Backend.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.Controllers
+namespace Backend.API.Controllers
 {
     /// <summary>API tra cứu, điều chỉnh kho</summary>
     [ApiController]

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Infrastructure.Data;
 
-namespace Backend.Controllers
+namespace Backend.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

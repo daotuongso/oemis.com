@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Backend.Infrastructure.Data;
 using Backend.Application.DTOs;
 using Backend.Application.Services; // EmailService
-using Backend.Infrastructure.Utils;    // PdfUtil
+using Backend.API.Utils;    // PdfUtil
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

@@ -7,7 +7,7 @@ using Backend.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [ApiController]
 [Route("api/report")]

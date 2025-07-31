@@ -426,3 +426,17 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# .NET
+bin/
+obj/
+*.user
+*.vs/
+# Node
+node_modules/
+dist/
+.env
+
+/frontend/node_modules/
+/frontend/build/
+

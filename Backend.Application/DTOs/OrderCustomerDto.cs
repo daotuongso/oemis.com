@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Backend.Domain.Enums;
 
 namespace Backend.Application.DTOs
 {

@@ -5,7 +5,7 @@ using Backend.Domain.Entities;
 using Backend.Infrastructure.Data;
 using Backend.Application.DTOs;
 
-namespace Backend.Controllers;
+namespace Backend.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

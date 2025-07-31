@@ -6,12 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
-  </PropertyGroup>
-
-  <!-- Cho phép mọi class-library truy cập HttpContext, IOptions, Task, v.v. -->
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
+  </PropertyGroup>  
 
 </Project>
 
