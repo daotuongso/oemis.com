@@ -18,14 +18,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore NuGet packages
-        run: dotnet restore src/backend/Backend.sln
-
-      - name: Build solution
-        run: dotnet build src/backend/Backend.sln --no-restore --configuration Release
-
-      - name: Run backend tests
-        run: dotnet test src/backend/Backend.sln --no-build --configuration Release
+      - name: Restore, Build & Test Backend
+        working-directory: src/backend
+        run: |
+          dotnet restore
+          dotnet build --no-restore --configuration Release
+          dotnet test  --no-build    --configuration Release
 
   build-frontend:
     name: Build Frontend
@@ -53,10 +51,9 @@ jobs:
       - name: Lint & Test
         working-directory: frontend
         run: |
-          npm run lint || true   # nếu có ESLint
+          npm run lint || true
           npm test -- --watchAll=false || true
 
       - name: Build production bundle
         working-directory: frontend
         run: npm run build
-
