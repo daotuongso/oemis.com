@@ -12,6 +12,11 @@
   <ItemGroup>
     <!-- PackageReference ko cần version, lấy từ Directory.Packages.props -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <!-- MỚI: cần Relational assembly để namespace ValueConversion tồn tại -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" /> <!-- MỚI -->
+
+    <!-- MỚI: EF Core design-time support cho dotnet ef migrations -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" /> <!-- MỚI -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -19,6 +19,7 @@
     <!-- EF Core -->
     <PackageVersion Include="Microsoft.EntityFrameworkCore"           Version="8.0.7" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.7" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design"    Version="8.0.7" PrivateAssets="all" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools"     Version="8.0.7" PrivateAssets="all" />
 

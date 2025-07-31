@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(OrchidContext))]
-    [Migration("20250731181316_StockCount1")]
+    [Migration("20250731183427_StockCount1")]
     partial class StockCount1
     {
         /// <inheritdoc />
