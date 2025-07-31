@@ -1,0 +1,1 @@
+public record CountSheetCloseDto(List<CountLineDto> Lines);

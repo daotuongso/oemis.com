@@ -1,0 +1,17 @@
+<Project>
+
+  <!-- Thiết lập mặc định cho *mọi* project -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!-- Cho phép mọi class-library truy cập HttpContext, IOptions, Task, v.v. -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
+

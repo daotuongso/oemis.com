@@ -2,6 +2,7 @@ using Backend.Infrastructure.Data;
 using Backend.Domain.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Backend.Application.Services;
 
 public sealed class LowStockMiddleware
 {

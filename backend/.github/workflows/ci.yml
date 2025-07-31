@@ -1,0 +1,29 @@
+name: CI – Build & Test (.NET 8)
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore
+      run: dotnet restore Backend.sln
+
+    - name: Build (Release)
+      run: dotnet build Backend.sln --configuration Release --no-restore
+
+    - name: Test (nếu có dự án test)
+      run: |
+        echo "🔔 Hiện tại chưa có Unit Test, bước này sẽ skip."

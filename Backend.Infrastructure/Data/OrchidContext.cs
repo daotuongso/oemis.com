@@ -6,16 +6,16 @@
 //  • Decimal(18,2) cho Price / UnitPrice          (tránh truncate)
 // ───────────────────────────────────────────────────────────────────
 
-using Backend.Models;
+using Backend.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Backend.Models.Inventory;
-using Backend.Models.Procurement;
-using Backend.Models.Accounting;
+using Backend.Domain.Entities.Inventory;
+using Backend.Domain.Entities.Procurement;
+using Backend.Domain.Entities.Accounting;
 
-namespace Backend.Data;
+namespace Backend.Infrastructure.Data;
 
-public class OrchidContext : IdentityDbContext
+public class OrchidContext : IdentityDbContext<ApplicationUser>
 {
   public OrchidContext(DbContextOptions<OrchidContext> opt) : base(opt) { }
 

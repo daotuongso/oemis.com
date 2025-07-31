@@ -1,0 +1,1 @@
+public record CountLineDto(int ProductId, int QtyActual);
