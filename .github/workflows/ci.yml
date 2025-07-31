@@ -19,16 +19,16 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Clean solution
-        run: dotnet clean src/Backend.sln
+        run: dotnet clean Backend.sln
 
       - name: Restore NuGet packages
-        run: dotnet restore src/Backend.sln
+        run: dotnet restore Backend.sln
 
       - name: Build solution
-        run: dotnet build src/Backend.sln --no-restore --configuration Release
+        run: dotnet build Backend.sln --no-restore --configuration Release
 
       - name: Run backend tests
-        run: dotnet test src/Backend.sln --no-build --configuration Release
+        run: dotnet test Backend.sln --no-build --configuration Release
 
 
   build-frontend:
@@ -45,21 +45,21 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v3
         with:
-          path: src/frontend/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('src/frontend/package-lock.json') }}
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('frontend/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        working-directory: src/frontend
+        working-directory: frontend
         run: npm ci
 
       - name: Lint & Test
-        working-directory: src/frontend
+        working-directory: frontend
         run: |
           npm run lint || true
           npm test -- --watchAll=false || true
 
       - name: Build production bundle
-        working-directory: src/frontend
+        working-directory: frontend
         run: npm run build
